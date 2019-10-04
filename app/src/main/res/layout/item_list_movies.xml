@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="movieInfo"
+            name="variableMovieInfo"
             type="com.android.academi.fundamental.listadaptera.data.MovieInfo" />
     </data>
 
@@ -18,13 +18,15 @@
         <ImageView
             android:id="@+id/iv_MainMovie"
             android:layout_width="142dp"
-            android:layout_height="0dp"
+            android:layout_height="142dp"
 
             android:layout_margin="8dp"
 
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
 
             android:contentDescription="@string/movie_image"
+
+            app:setImageGlide="@{variableMovieInfo.urlImage}"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +44,8 @@
             android:textColor="@color/colorTitleMovie"
             android:textStyle="bold|italic"
             android:textSize="25sp"
-            android:text="@{movieInfo.title}"
+            android:lines="1"
+            android:text="@{variableMovieInfo.title}"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_MainMovie"
@@ -61,7 +64,7 @@
             android:textStyle="normal"
             android:textSize="16sp"
             android:maxLines="4"
-            android:text="@{movieInfo.description}"
+            android:text="@{variableMovieInfo.description}"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
