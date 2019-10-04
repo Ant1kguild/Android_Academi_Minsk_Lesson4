@@ -40,7 +40,7 @@ class ListMoviesAdapter(private val allMovies: List<MovieInfo> = MovieListInfo()
     inner class ViewHolder(private val binding: ItemListMoviesBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: MovieInfo) {
-            binding.variableMovieInfo = movie
+            binding.modelMovieInfo = movie
             binding.executePendingBindings()
         }
 
