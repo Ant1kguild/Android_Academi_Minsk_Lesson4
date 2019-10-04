@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movieInfo"
+            type="com.android.academi.fundamental.listadaptera.data.MovieInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerItemListMovies"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:id="@+id/iv_MainMovie"
+            android:layout_width="142dp"
+            android:layout_height="0dp"
+
+            android:layout_margin="8dp"
+
+            android:scaleType="centerCrop"
+
+            android:contentDescription="@string/movie_image"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+             />
+
+        <TextView
+            android:id="@+id/tv_TitleMovie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="8dp"
+
+            android:textColor="@color/colorTitleMovie"
+            android:textStyle="bold|italic"
+            android:textSize="25sp"
+            android:text="@{movieInfo.title}"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_MainMovie"
+            app:layout_constraintTop_toTopOf="parent"
+
+            tools:text="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/tv_DescriptionMovie"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:layout_margin="8dp"
+
+            android:textColor="@color/colorDescriptionMovie"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:maxLines="4"
+            android:text="@{movieInfo.description}"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_MainMovie"
+            app:layout_constraintTop_toBottomOf="@+id/tv_TitleMovie"
+
+            tools:text="@tools:sample/lorem/random"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

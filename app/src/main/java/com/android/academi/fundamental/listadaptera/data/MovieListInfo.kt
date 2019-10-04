@@ -1,6 +1,6 @@
 package com.android.academi.fundamental.listadaptera.data
 
-data class MoviInfo(
+data class MovieInfo(
     val title: String,
     val description: String,
     val urlImage: String,
@@ -11,7 +11,7 @@ data class MoviInfo(
 
 class MovieListInfo {
     private val movies = listOf(
-        MoviInfo(
+        MovieInfo(
             "Jurassic World",
             "Brothers Zach and Gray Mitchell visit Jurassic World, a dinosaur theme park on Isla Nublar, of which their aunt Claire Dearing is the operations manager." +
                     " Claire assigns her assistant Zara as the boys' guide, but they evade her and explore on their own. Elsewhere on the island, U.S." +
@@ -42,7 +42,7 @@ class MovieListInfo {
             "June 12, 2015"
 
         ),
-        MoviInfo(
+        MovieInfo(
             "The Meg",
             "Rescue diver Jonas Taylor is attempting to save the crew of a damaged nuclear submarine when he sees the hull of the sub being rammed by a giant creature." +
                     " Two of his crew are trapped in the damaged sub; Taylor is forced to flee, realizing that attempting rescue would result in the death of everyone on " +
@@ -73,7 +73,7 @@ class MovieListInfo {
             "https://www.youtube.com/watch?v=udm5jUA-2bs",
             "August 10, 2018"
         ),
-        MoviInfo(
+        MovieInfo(
             "The Purge",
             "In 2014, the New Founding Fathers of America, a totalitarian political party, are voted into office following an economic collapse. They pass a law that sanctions an annual \"Purge\": for 12 hours each year all crime, including murder, arson, theft and rape, is legal, except against government officials, and all emergency services are unavailable until 7 am. By 2022, the United States has become virtually crime-free and the unemployment rate has dropped to 1%, ostensibly because of the Purge." +
                     "James Sandin returns to his home in an affluent Los Angeles gated community to wait out the night with his wife Mary and their children, Zoey and Charlie. The family is assured that the security system manufactured by James' company will keep them safe. While the family awaits the start of the purge, Zoey meets her boyfriend Henry, an older boy whom James dislikes as he is eighteen, deeming him too old for his daughter. James enables the security system, and as the purge begins, the family disperses in their home to go about their normal routines." +
@@ -87,7 +87,7 @@ class MovieListInfo {
             "https://www.youtube.com/watch?v=UL29y0ah92w",
             "June 7, 2013"
         ),
-        MoviInfo(
+        MovieInfo(
             "Deadpool 2",
             "After fighting organized crime as the mercenary Deadpool for two years, Wade Wilson fails to kill one of his targets on his anniversary with Vanessa, his girlfriend. That night, after the pair decide to start a family together, the target tracks Wilson down and inadvertently kills Vanessa. Wilson kills the man in revenge, and blaming himself for her death attempts to commit suicide six weeks later by blowing himself up. Wilson has a vision of Vanessa in the afterlife, but the pieces of his body remain alive and are put back together by Colossus. Wilson is left with only a Skee-Ball token, an anniversary gift, as a final memento of Vanessa.\n" +
                     "Recovering at the X-Mansion, Wilson reluctantly agrees to join the X-Men because he believes Vanessa would have wanted him to. He, Colossus, and Negasonic Teenage Warhead respond to a standoff between authorities and the unstable young mutant Russell Collins / Firefist at an orphanage, labeled a \"Mutant Reeducation Center\". Wilson realizes that Collins has been abused by the orphanage staff, and kills one of the staff members. Colossus stops him from killing anyone else, and both Wilson and Collins are arrested. Restrained with collars that suppress their powers, they are taken to the Ice Box, an isolated prison for mutant criminals. Meanwhile, Cable—a cybernetic soldier from the future whose family is murdered by an older Collins—travels back in time to kill Collins before he ever becomes a killer." +
@@ -98,7 +98,7 @@ class MovieListInfo {
             "https://www.youtube.com/watch?v=D86RtevtfrA",
             "May 18, 2018"
         ),
-        MoviInfo(
+        MovieInfo(
             "Black Panther",
             "Thousands of years ago, five African tribes war over a meteorite containing the metal vibranium. One warrior ingests a  affected by the metal and gains superhuman abilities, becoming the first. He unites all but the Jabari Tribe to form the nation of Wakanda. Over centuries, the Wakandans use the vibranium to develop advanced technology and isolate themselves from the world by posing as a Third World country. In 1992, Wakanda's King T'Chaka visits his brother N'Jobu, who is working undercover in Oakland, California. T'Chaka accuses N'Jobu of assisting black-market arms dealer Ulysses Klaue with stealing vibranium from Wakanda. N'Jobu's partner reveals he is Zuri, another undercover Wakandan, and confirms T'Chaka's suspicions." +
                     "In the present day, following T'Chaka's death,[N 1] his son T'Challa returns to Wakanda to assume the throne. He and Okoye, the leader of the Dora Milaje regiment, extract T'Challa's ex-lover Nakia from an undercover assignment so she can attend his coronation ceremony with his mother Ramonda and younger sister Shuri. At the ceremony, the Jabari Tribe's leader M'Baku challenges T'Challa for the crown in ritual combat. T'Challa defeats M'Baku and persuades him to yield rather than die." +
@@ -110,7 +110,7 @@ class MovieListInfo {
             "https://www.youtube.com/watch?v=xjDjIWPwcPU",
             "February 16, 2018"
         ),
-        MoviInfo(
+        MovieInfo(
             "OCEAN'S 8",
             "Newly paroled con artist Debbie Ocean – the  Danny Ocean's younger sister – convinces former partner-in-crime Lou to join her in a new heist. They assemble their team: bankrupt fashion designer Rose Weil, jewelry maker Amita, eager to move out of her mother's house, hacker Nine Ball, street hustler and pickpocket Constance, and profiteer Tammy, who fences stolen goods out of her suburban home." +
                     "Debbie plans to steal the Toussaint, a 150 million Cartier necklace, during the upcoming Met Gala and use movie star Daphne Kluger as a mule. The team manipulates Daphne into hiring Weil and convince Cartier to loan Daphne the Toussaint. They digitally scan the necklace to manufacture a cubic zirconia counterfeit. Tammy secures a job at Vogue and gains access to the gala, and Debbie leads Daphne to invite art dealer Claude Becker, whose betrayal sent Debbie to prison, as her date. Lou confronts Debbie for planning revenge against Becker, but Debbie reassures her this is not the case." +
@@ -121,21 +121,21 @@ class MovieListInfo {
             "https://www.youtube.com/watch?v=n5LoVcVsiSQ",
             "June 8, 2018"
         ),
-        MoviInfo(
+        MovieInfo(
             "Interstellar",
             "In the mid-21st century, crop blights and dust storms threaten humanity's survival. Corn is the last viable crop. The world has also evolved into a post-truth society where younger generations are taught ideas such as the Apollo moon missions were faked. Widowed engineer and former NASA pilot Joseph Cooper is now a farmer. Living with him are his father-in-law, Donald; his 15-year-old son, Tom; and 10-year-old daughter, Murphy. After a dust storm, strange patterns made from dust inexplicably appear on Murphy's bedroom floor, she attributes the anomaly to a ghost. Cooper eventually deduces the patterns were caused by gravity variations and are a binary code for geographic coordinates. Cooper follows the coordinates to a secret NASA facility headed by Professor John Brand, Cooper's former supervisor. Professor Brand says gravitational anomalies have happened elsewhere. 48 years earlier, unknown beings positioned a wormhole near Saturn, opening a path to a distant galaxy with twelve potentially habitable worlds located near a black hole named Gargantua. Twelve volunteers traveled through the wormhole to individually survey the planets. Astronauts Miller, Edmunds, and Mann reported positive results. Based on their data, Professor Brand conceived two plans to ensure humanity's survival. Plan A involves developing a gravitational propulsion theory to propel a mass exodus, while Plan B involves launching the Endurance spacecraft carrying 5,000 frozen human embryos to colonize a habitable planet.",
             "https://image.tmdb.org/t/p/w342/nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg",
             "https://www.youtube.com/watch?v=zSWdZVtXT7E&t=1s",
             "November 7, 2014"
         ),
-        MoviInfo(
+        MovieInfo(
             "Thor: Ragnarok",
             "Two years after the battle of Sokovia,[N 1] Thor is imprisoned by the fire demon Surtur, who reveals that Thor's father Odin is no longer on Asgard. He explains that the realm will soon be destroyed during the prophesied Ragnarök, once Surtur unites his crown with the Eternal Flame that burns in Odin's vault. Thor frees himself, defeats Surtur and takes his crown, believing he has prevented Ragnarök.",
             "https://image.tmdb.org/t/p/w342/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
             "https://www.youtube.com/watch?v=ue80QwXMRHg",
             "November 3, 2017"
         ),
-        MoviInfo(
+        MovieInfo(
             "Guardians of the Galaxy",
             "In 1988, following his mother's death, a young Peter Quill is abducted from Earth by the Ravagers, a group of alien thieves and smugglers led by Yondu Udonta. Twenty-six years later on the planet Morag, Quill steals a mysterious orb but is attacked by Korath, a subordinate to the fanatical Kree militant, Ronan. Although Quill escapes with the orb, Yondu discovers his theft and issues a bounty for his capture, while Ronan sends the assassin Gamora after the orb.",
             "https://image.tmdb.org/t/p/w342/y31QB9kn3XSudA15tV7UWQ9XLuW.jpg",
@@ -144,6 +144,6 @@ class MovieListInfo {
         )
     )
 
-    fun getAllMovies(): List<MoviInfo> = movies
+    fun getAllMovies(): List<MovieInfo> = movies
 }
 
