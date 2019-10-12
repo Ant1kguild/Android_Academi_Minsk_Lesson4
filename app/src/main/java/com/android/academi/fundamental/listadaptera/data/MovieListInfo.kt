@@ -1,5 +1,9 @@
 package com.android.academi.fundamental.listadaptera.data
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class MovieInfo(
     val title: String,
     val description: String,
@@ -7,7 +11,7 @@ data class MovieInfo(
     val urlMovieTrailer: String,
     val releaseDate: String
 
-)
+) : Parcelable
 
 class MovieListInfo {
     private val movies = listOf(

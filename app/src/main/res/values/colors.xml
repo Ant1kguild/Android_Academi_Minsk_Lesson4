@@ -6,4 +6,11 @@
 
     <color name="colorTitleMovie">#34A6CC</color>
     <color name="colorDescriptionMovie">#E8000000</color>
+
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#6B6B6B</color>
+    <color name="purple">#7B1FA2</color>
 </resources>

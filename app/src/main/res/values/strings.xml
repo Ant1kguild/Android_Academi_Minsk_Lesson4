@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">List&amp;Adaptera</string>
     <string name="movie_image">Movie image</string>
+    <string name="description_main_image">Main image</string>
+    <string name="description_background_image">Background image</string>
+    <string name="release_date">Release date:</string>
+    <string name="movie_trailer">Movie trailer</string>
+    <string name="overview_title">Overview:</string>
 </resources>
