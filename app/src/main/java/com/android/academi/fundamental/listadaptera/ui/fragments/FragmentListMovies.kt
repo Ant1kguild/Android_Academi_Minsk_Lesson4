@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment
 import com.android.academi.fundamental.listadaptera.R
 import com.android.academi.fundamental.listadaptera.databinding.FragmentListMoviesBinding
 import com.android.academi.fundamental.listadaptera.ui.adapters.ListMoviesAdapter
+import org.koin.androidx.scope.currentScope
 
 class FragmentListMovies : Fragment() {
     private lateinit var binding: FragmentListMoviesBinding
+    private var listMoviesAdapter: ListMoviesAdapter = currentScope.get()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +21,7 @@ class FragmentListMovies : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list_movies, container, false)
-        binding.rvListMovies.adapter = ListMoviesAdapter()
+        binding.rvListMovies.adapter = listMoviesAdapter
         return binding.root
     }
 }

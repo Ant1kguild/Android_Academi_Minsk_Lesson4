@@ -4,7 +4,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.databinding.BindingAdapter
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding3.view.clicks
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
+import kotlinx.android.synthetic.main.item_list_movies.view.*
 
 @BindingAdapter("setImageGlide")
 fun setImage(imageView: ImageView, urlImage: String) {
@@ -27,12 +27,10 @@ fun setImage(imageView: ImageView, urlImage: String) {
 }
 
 
-class ListMoviesAdapter(private val allMovies: List<MovieInfo> = MovieListInfo().getAllMovies()) :
+class ListMoviesAdapter(private val moviesInfo: MovieListInfo) :
     RecyclerView.Adapter<ListMoviesAdapter.ViewHolder>() {
 
     private val visibilityDisposable: CompositeDisposable = CompositeDisposable()
-
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,11 +40,20 @@ class ListMoviesAdapter(private val allMovies: List<MovieInfo> = MovieListInfo()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(allMovies[position])
-        holder.setClick(position)
+        holder.bind(moviesInfo.getPosition(position))
+        visibilityDisposable.add(holder.itemView.clicks().subscribe({
+            val action =
+                FragmentListMoviesDirections.actionFragmentListMoviesToFragmentScreenSlide(position)
+            findNavController(holder.itemView).navigate(action)
+        }, {}, {}))
+
     }
 
-    override fun getItemCount(): Int = allMovies.size
+    override fun onDetachedFromRecyclerView(recyclerView: RecyclerView) {
+        visibilityDisposable.clear()
+    }
+
+    override fun getItemCount(): Int = moviesInfo.getSize()
 
 
     inner class ViewHolder(private val binding: ItemListMoviesBinding) :
@@ -55,29 +62,5 @@ class ListMoviesAdapter(private val allMovies: List<MovieInfo> = MovieListInfo()
             binding.modelMovieInfo = movie
             binding.executePendingBindings()
         }
-
-        private fun clicks(): Observable<Unit> {
-            return binding.containerItemListMovies.clicks()
-        }
-
-        fun setClick(pos: Int) {
-
-            visibilityDisposable.add(
-                clicks()
-                    .subscribe(
-                        {
-                            val action = FragmentListMoviesDirections.actionFragmentListMoviesToFragmentScreenSlide(pos)
-                            findNavController(binding.root).navigate(action)
-
-                        },
-                        { Log.e("123", "some error") },
-                        { Log.e("123", "On Complite") })
-            )
-
-
-        }
-
     }
-
-
 }

@@ -149,5 +149,9 @@ class MovieListInfo {
     )
 
     fun getAllMovies(): List<MovieInfo> = movies
+
+    fun getSize() = movies.size
+
+    fun getPosition(pos: Int): MovieInfo = movies[pos]
 }
 
