@@ -2,6 +2,7 @@ package com.android.academi.fundamental.listadaptera.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import org.koin.core.KoinComponent
 
 @Parcelize
 data class MovieInfo(
@@ -13,7 +14,7 @@ data class MovieInfo(
 
 ) : Parcelable
 
-class MovieListInfo {
+class MovieListInfo : KoinComponent {
     private val movies = listOf(
         MovieInfo(
             "Jurassic World",

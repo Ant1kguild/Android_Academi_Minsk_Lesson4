@@ -10,11 +10,15 @@
             name="movie"
             type="com.android.academi.fundamental.listadaptera.data.MovieInfo" />
     </data>
+    
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerMoviesDetailsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
         <ImageView
             android:id="@+id/iv_main_image"

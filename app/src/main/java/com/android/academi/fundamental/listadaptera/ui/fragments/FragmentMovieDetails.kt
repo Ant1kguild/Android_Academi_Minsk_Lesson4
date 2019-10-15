@@ -26,6 +26,8 @@ class FragmentMovieDetails : Fragment() {
         )
         binding.movie = arguments!!.getParcelable(ARGS_MOVIE)
 
+
+
         return binding.root
     }
 

@@ -8,17 +8,19 @@ import com.android.academi.fundamental.listadaptera.data.MovieListInfo
 import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentMovieDetails
 
 class ScreenSlidePageAdapter(fa: FragmentManager,
-                             private val movieList: List<MovieInfo> = MovieListInfo().getAllMovies()) :
+                             private val movieList: MovieListInfo) :
     FragmentStatePagerAdapter(fa)  {
 
 
     override fun getCount(): Int {
-        return  movieList.size
+        return  movieList.getSize()
     }
 
     override fun getItem(position: Int): Fragment {
-        return FragmentMovieDetails.newInstance(movieList[position])
+        return FragmentMovieDetails.newInstance(movieList.getPosition(position))
     }
+
+
 }
 
 

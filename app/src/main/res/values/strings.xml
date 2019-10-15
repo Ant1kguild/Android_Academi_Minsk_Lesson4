@@ -6,4 +6,6 @@
     <string name="release_date">Release date:</string>
     <string name="movie_trailer">Movie trailer</string>
     <string name="overview_title">Overview:</string>
+    <string name="coroutines">Coroutines</string>
+    <string name="thread_handler">Thread Handler</string>
 </resources>

@@ -13,7 +13,7 @@ import org.koin.androidx.scope.currentScope
 
 class FragmentListMovies : Fragment() {
     private lateinit var binding: FragmentListMoviesBinding
-    private var listMoviesAdapter: ListMoviesAdapter = currentScope.get()
+    private val listMoviesAdapter by currentScope.inject<ListMoviesAdapter>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,6 +1,5 @@
 package com.android.academi.fundamental.listadaptera.ui.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -13,9 +12,8 @@ import com.android.academi.fundamental.listadaptera.databinding.ItemListMoviesBi
 import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentListMoviesDirections
 import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding3.view.clicks
-import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.item_list_movies.view.*
+import org.koin.core.KoinComponent
 
 @BindingAdapter("setImageGlide")
 fun setImage(imageView: ImageView, urlImage: String) {
@@ -28,7 +26,7 @@ fun setImage(imageView: ImageView, urlImage: String) {
 
 
 class ListMoviesAdapter(private val moviesInfo: MovieListInfo) :
-    RecyclerView.Adapter<ListMoviesAdapter.ViewHolder>() {
+    RecyclerView.Adapter<ListMoviesAdapter.ViewHolder>(), KoinComponent {
 
     private val visibilityDisposable: CompositeDisposable = CompositeDisposable()
 

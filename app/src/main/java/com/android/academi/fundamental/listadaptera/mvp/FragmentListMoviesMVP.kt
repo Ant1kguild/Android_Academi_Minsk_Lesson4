@@ -1,8 +1,7 @@
 package com.android.academi.fundamental.listadaptera.mvp
 
 interface FragmentListMoviesContract {
-    interface Presenter:BasePresenter<View>{}
+    interface Presenter:BasePresenter<View>
 
-    interface View:BaseView<Presenter>{
-    }
+    interface View:BaseView<Presenter>
 }

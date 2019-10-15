@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import com.android.academi.fundamental.listadaptera.R
 import com.android.academi.fundamental.listadaptera.databinding.FragmentScreenSlideBinding
 import com.android.academi.fundamental.listadaptera.ui.adapters.ScreenSlidePageAdapter
+import org.koin.android.ext.android.get
+import org.koin.core.KoinComponent
 
-class FragmentScreenSlide : Fragment() {
+class FragmentScreenSlide : Fragment(), KoinComponent {
     private lateinit var binding: FragmentScreenSlideBinding
     private lateinit var viewPagerAdapter: ScreenSlidePageAdapter
 
@@ -22,9 +24,12 @@ class FragmentScreenSlide : Fragment() {
     ): View? {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_screen_slide, container, false)
+        val position: Int = arguments?.get("Position") as Int
 
-        viewPagerAdapter = ScreenSlidePageAdapter(childFragmentManager)
+
+        viewPagerAdapter = ScreenSlidePageAdapter(childFragmentManager, get())
         binding.vpScreenSlideFragment.adapter = viewPagerAdapter
+        binding.vpScreenSlideFragment.currentItem = position
 
         return binding.root
     }
