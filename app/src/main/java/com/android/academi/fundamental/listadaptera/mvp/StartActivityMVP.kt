@@ -1,6 +1,7 @@
 package com.android.academi.fundamental.listadaptera.mvp
 
 import com.android.academi.fundamental.listadaptera.data.MovieListInfo
+import com.android.academi.fundamental.listadaptera.ui.callbacks.IToolbar
 
 
 interface StartActivityContract{
