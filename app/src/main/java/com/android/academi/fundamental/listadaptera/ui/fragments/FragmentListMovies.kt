@@ -11,6 +11,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.android.academi.fundamental.listadaptera.R
 import com.android.academi.fundamental.listadaptera.databinding.FragmentListMoviesBinding
+import com.android.academi.fundamental.listadaptera.ui.MIC0routines
+import com.android.academi.fundamental.listadaptera.ui.MIThreadHandler
 import com.android.academi.fundamental.listadaptera.ui.StartActivity
 import com.android.academi.fundamental.listadaptera.ui.adapters.ListMoviesAdapter
 import com.android.academi.fundamental.listadaptera.ui.callbacks.IToolbar
@@ -36,17 +38,18 @@ class FragmentListMovies : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list_movies, container, false)
         binding.rvListMovies.adapter = listMoviesAdapter
 
-        try {
-            iToolbar = activity as IToolbar
-        } catch (e: ClassCastException) {
-            Log.e(TAG,activity.toString() + " must implement onSomeEventListener" )
-            throw ClassCastException(activity.toString() + " must implement onSomeEventListener")
-        }
+        iToolbar = activity as StartActivity
 
-        iToolbar.setTitle(toolbarTitle)
+
+
+        iToolbar.updateToolbar(
+            StartActivity.ToolbarSettings.ToolbarTitle(true, toolbarTitle),
+            listOf(MIC0routines(false), MIThreadHandler(false))
+        )
         //iToolbar.coroutinesItemShow(false)
         //iToolbar.threadHandlerItemShow(false)
-        //(activity as AppCompatActivity).supportActionBar?.title = toolbarTitle
+        (activity as AppCompatActivity).supportActionBar?.title = toolbarTitle
+        //(activity as AppCompatActivity).supportActionBar?.hide()
 
 
         return binding.root
