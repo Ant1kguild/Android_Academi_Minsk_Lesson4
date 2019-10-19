@@ -37,6 +37,10 @@ class FragmentMovieDetails : Fragment() {
 
         binding.movie = arguments!!.getParcelable(ARGS_MOVIE)
 
+        if (visible && started) {
+            setToolbarTitle()
+        }
+
         return binding.root
     }
 
