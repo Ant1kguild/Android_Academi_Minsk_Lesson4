@@ -11,17 +11,16 @@ import com.android.academi.fundamental.listadaptera.ui.StartActivity
 
 
 class FragmentMovieDetails : Fragment() {
-    private lateinit var binding: FragmentMoviesDetailsBinding
-    private var started: Boolean = false
-    private var visible: Boolean = false
 
-    override fun onStart() {
-        started = true
-        if (visible && started) {
-            setToolbarTitle()
-        }
-        super.onStart()
+
+    private lateinit var binding: FragmentMoviesDetailsBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,23 +33,10 @@ class FragmentMovieDetails : Fragment() {
             container,
             false
         )
-
         binding.movie = arguments!!.getParcelable(ARGS_MOVIE)
-
-        if (visible && started) {
-            setToolbarTitle()
-        }
-
         return binding.root
     }
 
-
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        if (visible && started) {
-            setToolbarTitle()
-        }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_items, menu)
@@ -69,14 +55,6 @@ class FragmentMovieDetails : Fragment() {
             bundle.putString(ARGS_MOVIE_TITLE, movie.title)
             fragment.arguments = bundle
             return fragment
-        }
-    }
-
-    private fun setToolbarTitle() {
-        arguments!!.getString(ARGS_MOVIE_TITLE)?.let {
-            (activity as StartActivity).setToolbarTitle(
-                it
-            )
         }
     }
 }
