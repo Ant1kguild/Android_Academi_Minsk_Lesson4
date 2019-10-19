@@ -6,12 +6,22 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.android.academi.fundamental.listadaptera.R
 import com.android.academi.fundamental.listadaptera.data.MovieInfo
-import com.android.academi.fundamental.listadaptera.data.MovieListInfo
 import com.android.academi.fundamental.listadaptera.databinding.FragmentMoviesDetailsBinding
 import com.android.academi.fundamental.listadaptera.ui.StartActivity
 
+
 class FragmentMovieDetails : Fragment() {
     private lateinit var binding: FragmentMoviesDetailsBinding
+    private var started: Boolean = false
+    private var visible: Boolean = false
+
+    override fun onStart() {
+        started = true
+        if (visible && started) {
+            setToolbarTitle()
+        }
+        super.onStart()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,22 +35,16 @@ class FragmentMovieDetails : Fragment() {
             false
         )
 
-
         binding.movie = arguments!!.getParcelable(ARGS_MOVIE)
-
-
 
         return binding.root
     }
 
+
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
-        if (isVisibleToUser) {
-            arguments!!.getString(ARGS_MOVIE_TITLE)?.let {
-                (activity as StartActivity).setToolbarTitle(
-                    it
-                )
-            }
+        if (visible && started) {
+            setToolbarTitle()
         }
     }
 
@@ -61,6 +65,14 @@ class FragmentMovieDetails : Fragment() {
             bundle.putString(ARGS_MOVIE_TITLE, movie.title)
             fragment.arguments = bundle
             return fragment
+        }
+    }
+
+    private fun setToolbarTitle() {
+        arguments!!.getString(ARGS_MOVIE_TITLE)?.let {
+            (activity as StartActivity).setToolbarTitle(
+                it
+            )
         }
     }
 }
