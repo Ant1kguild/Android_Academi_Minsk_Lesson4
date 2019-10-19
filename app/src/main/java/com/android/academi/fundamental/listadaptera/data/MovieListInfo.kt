@@ -14,7 +14,7 @@ data class MovieInfo(
 
 ) : Parcelable
 
-class MovieListInfo : KoinComponent {
+class MovieListInfo {
     private val movies = listOf(
         MovieInfo(
             "Jurassic World",

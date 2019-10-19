@@ -6,14 +6,17 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.android.academi.fundamental.listadaptera.data.MovieInfo
 import com.android.academi.fundamental.listadaptera.data.MovieListInfo
 import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentMovieDetails
+import org.koin.core.KoinComponent
 
-class ScreenSlidePageAdapter(fa: FragmentManager,
-                             private val movieList: MovieListInfo) :
-    FragmentStatePagerAdapter(fa)  {
+class ScreenSlidePageAdapter(
+    fa: FragmentManager,
+    private val movieList: MovieListInfo
+) :
+    FragmentStatePagerAdapter(fa), KoinComponent {
 
 
     override fun getCount(): Int {
-        return  movieList.getSize()
+        return movieList.getSize()
     }
 
     override fun getItem(position: Int): Fragment {

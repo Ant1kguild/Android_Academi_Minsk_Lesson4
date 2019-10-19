@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.android.academi.fundamental.listadaptera.R
+import com.android.academi.fundamental.listadaptera.data.MovieListInfo
 import com.android.academi.fundamental.listadaptera.databinding.FragmentScreenSlideBinding
+import com.android.academi.fundamental.listadaptera.ui.StartActivity
 import com.android.academi.fundamental.listadaptera.ui.adapters.ScreenSlidePageAdapter
 import org.koin.android.ext.android.get
 import org.koin.core.KoinComponent
@@ -15,7 +17,6 @@ import org.koin.core.KoinComponent
 class FragmentScreenSlide : Fragment(), KoinComponent {
     private lateinit var binding: FragmentScreenSlideBinding
     private lateinit var viewPagerAdapter: ScreenSlidePageAdapter
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,14 +28,13 @@ class FragmentScreenSlide : Fragment(), KoinComponent {
         val position: Int = arguments?.get("Position") as Int
 
 
+
         viewPagerAdapter = ScreenSlidePageAdapter(childFragmentManager, get())
         binding.vpScreenSlideFragment.adapter = viewPagerAdapter
         binding.vpScreenSlideFragment.currentItem = position
 
         return binding.root
     }
-
-
 }
 
 

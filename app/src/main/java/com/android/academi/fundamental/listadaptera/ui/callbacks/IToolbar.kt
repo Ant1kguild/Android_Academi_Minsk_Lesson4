@@ -1,12 +1,14 @@
 package com.android.academi.fundamental.listadaptera.ui.callbacks
 
-import com.android.academi.fundamental.listadaptera.ui.IMenuItem
-import com.android.academi.fundamental.listadaptera.ui.StartActivity
+import org.koin.core.KoinComponent
 
-interface IToolbar {
+interface IToolbar : KoinComponent {
 
 
-    fun updateToolbar(
-        toolbarTitle: StartActivity.ToolbarSettings.ToolbarTitle,
-        menuItemList:List<IMenuItem>    )
+    fun setToolbarTitle(newTitle: String)
+
+    fun setOptionMenu(newMenuId: Int)
+
+
 }
+

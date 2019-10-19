@@ -7,14 +7,17 @@ import com.android.academi.fundamental.listadaptera.mvp.StartActivityPresenter
 import com.android.academi.fundamental.listadaptera.ui.StartActivity
 import com.android.academi.fundamental.listadaptera.ui.adapters.ListMoviesAdapter
 import com.android.academi.fundamental.listadaptera.ui.adapters.ScreenSlidePageAdapter
+import com.android.academi.fundamental.listadaptera.ui.callbacks.IToolbar
 import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentListMovies
 import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentScreenSlide
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
+
 val androidModule = module {
 
     single { MovieListInfo() }
+
 
     scope(named<StartActivity>()) {
         scoped { (view: StartActivityContract.View, moviesList: MovieListInfo) ->
@@ -26,14 +29,18 @@ val androidModule = module {
     }
 
     scope(named<FragmentListMovies>()) {
-        scoped { ListMoviesAdapter(get()) }
+        scoped {
+            ListMoviesAdapter(get())
+        }
     }
 
-//    scope(named<FragmentScreenSlide>()) {
-//        scoped { (fm: FragmentManager, moviesList: MovieListInfo) -> ScreenSlidePageAdapter(fm, moviesList) }
-//    }
-
-    factory { (fm: FragmentManager, moviesList: MovieListInfo) -> ScreenSlidePageAdapter(fm, moviesList) }
+    scope(named<FragmentScreenSlide>()) {
+        scoped { (fm: FragmentManager, moviesList: MovieListInfo) ->
+            ScreenSlidePageAdapter(
+                fm,
+                moviesList
+            ) }
+    }
 
 
 }
