@@ -8,4 +8,8 @@
     <string name="overview_title">Overview:</string>
     <string name="coroutines">Coroutines</string>
     <string name="thread_handler">Thread Handler</string>
+    <string name="create">Create</string>
+    <string name="start">Start</string>
+    <string name="cancel">Cancel</string>
+    <string name="thread_text">Thread text</string>
 </resources>

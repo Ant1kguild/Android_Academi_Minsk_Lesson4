@@ -18,6 +18,8 @@ class FragmentListMovies : Fragment() {
     private val listMoviesAdapter by currentScope.inject<ListMoviesAdapter>()
 
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

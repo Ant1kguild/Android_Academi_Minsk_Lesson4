@@ -5,10 +5,17 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.android.academi.fundamental.listadaptera.R
 import com.android.academi.fundamental.listadaptera.databinding.ActivityStartBinding
 import com.android.academi.fundamental.listadaptera.mvp.StartActivityContract
+import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentListMoviesDirections
+import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentMovieDetails
+import com.android.academi.fundamental.listadaptera.ui.fragments.FragmentScreenSlideDirections
 import org.koin.android.ext.android.get
 import org.koin.androidx.scope.currentScope
 import org.koin.core.parameter.parametersOf
@@ -35,7 +42,6 @@ class StartActivity : AppCompatActivity(), StartActivityContract.View {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_coroutines -> {
-                Toast.makeText(this, "Item coroutines pressed", Toast.LENGTH_LONG).show()
             }
             R.id.item_thread_handler -> {
                 Toast.makeText(this, "Item thread handler pressed", Toast.LENGTH_LONG).show()

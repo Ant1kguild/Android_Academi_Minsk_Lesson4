@@ -23,5 +23,31 @@
         <argument
             android:name="Position"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentScreenSlide_to_fragmentCoroutines"
+            app:destination="@id/fragmentCoroutines" />
+        <action
+            android:id="@+id/action_fragmentScreenSlide_to_fragmentThreadHandler"
+            app:destination="@id/fragmentThreadHandler" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentCoroutines"
+        android:name="com.android.academi.fundamental.listadaptera.ui.fragments.threads_fragment.FragmentCoroutines"
+        android:label="FragmentCoroutines"
+        tools:layout="@layout/fragment_threads">
+        <action
+            android:id="@+id/action_fragmentCoroutines_to_fragmentThreadHandler"
+            app:destination="@id/fragmentThreadHandler" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentThreadHandler"
+        android:name="com.android.academi.fundamental.listadaptera.ui.fragments.threads_fragment.FragmentThreadHandler"
+        android:label="FragmentThreadHandler"
+        tools:layout="@layout/fragment_threads">
+        <action
+            android:id="@+id/action_fragmentThreadHandler_to_fragmentCoroutines"
+            app:destination="@id/fragmentCoroutines" />
     </fragment>
 </navigation>
